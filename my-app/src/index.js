@@ -1,16 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+// eslint-disable-next-line
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
-const Elem = (props) => {
-    return <h1>Hello world, my name is {props.title}  !!!</h1>
+import Counter from './counter'
+
+
+const App = (props) => {
+    return  <Counter />
 }
 
-// old
-// reactDom.render(elem, document.getElementById('root'))
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render( <Elem title='Dmitriy'/> )
-    // <React.StrictMode>
-    //     <App />
-    // </React.StrictMode>
+root.render( <App /> )
