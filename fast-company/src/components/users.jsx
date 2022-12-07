@@ -20,9 +20,8 @@ const Users = () => {
         )
     }
     const getUserQualities = (qualities) => {
-        const classes = 'badge m-1 bg-'
         return qualities.map((quality) => {
-            return <span key={quality._id} className={classes+quality.color}>{quality.name}</span>
+            return <span key={quality._id} className={'badge m-1 bg-' + quality.color}>{quality.name}</span>
         })
         
     }
@@ -34,7 +33,8 @@ const Users = () => {
         <>
             <MeetingUsers userMeetYouCount={users.length}/>
 
-            <table className="table table-dark table-hover mt-2">
+            {
+            users.length > 0 && <table className="table table-dark table-hover mt-2">
                 <thead>
                     <tr>
                         <th scope="col">Имя</th>
@@ -42,13 +42,14 @@ const Users = () => {
                         <th scope="col">Профессия</th>
                         <th scope="col">Встретился, раз</th>
                         <th scope="col">Оценка</th>
-                        <th scope="col"></th>
+                        <th scope="col"/>
                     </tr>
                 </thead>
                 <tbody>
                    { getUserList()}
                 </tbody>
             </table>
+            }
         </>
     )
 }

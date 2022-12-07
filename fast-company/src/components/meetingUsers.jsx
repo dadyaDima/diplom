@@ -1,7 +1,7 @@
 import React from "react";
 
 const MeetingUsers = ({userMeetYouCount}) => {
-    const setWariableWord = () => {
+    const renderPhraze = () => {
         const lastNum = Number(String(userMeetYouCount).slice(-1))
 
         if(lastNum === 1 ) return 'Человек тусанет '
@@ -11,7 +11,7 @@ const MeetingUsers = ({userMeetYouCount}) => {
     
     return (userMeetYouCount > 0) 
            ? <button type="button" className="btn btn-primary">
-                <span className="badge bg-secondary">{userMeetYouCount}</span> {setWariableWord() + 'с тобой сегодня'} 
+                <span className="badge bg-secondary">{userMeetYouCount}</span> {renderPhraze() + 'с тобой сегодня'} 
              </button>
            : <span className="badge bg-danger">На сегодня ты остался один :(</span>
 }
